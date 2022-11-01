@@ -1,0 +1,318 @@
+/* CSS Properties */
+
+:root {
+    --cprimary: #668697;
+    --csecondary: #758591;
+    --ctertiary: #0b4b5f;
+    --clight: #fdfdfd;
+    --ffamily: 'tahoma', 'verdana', sans-serif;
+}
+
+
+/*** Decoration ***/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--clight);
+    font-family: var(--ffamily);
+    line-height: 1.5;
+    color: var(--ctertiary);
+}
+
+h1 {
+    color: var(--ctertiary);
+    background-color: var(--cprimary);
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 14px;
+}
+
+a, a:link, a:visited {
+    color: var(--ctertiary);
+}
+
+.list a {
+    padding: 3px 5px;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid;
+}
+
+header, footer {
+    background-color: var(--ctertiary);
+    min-height: 50px;
+}
+
+header .list a {
+    color: var(--cprimary);
+}
+main .list a {
+    color: var(--ctertiary);
+}
+
+.banner .subtitle {
+    background-color: var(--cprimary);
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.project-list .overlay {
+    display: flex;
+    min-height: 98%;
+    border: var(--cprimary) 4px solid;
+    background: var(--csecondary);
+}
+
+.project-list img {
+    opacity: 0.8;
+    transition: all 300ms;
+}
+
+.project-list img:hover {
+    opacity: 1;
+
+}
+
+.project-details {
+    background-color:  var(--cprimary);
+    padding: 2%;
+}
+
+
+/*** Structure  ***/
+
+/* Header */
+header {
+    position: sticky;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+h1 {
+    display: inline-block;
+    padding: 0.5rem 0.5rem 0.5rem 4rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-right: 6%;
+}
+
+.nav.list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav.list li {
+    padding: 0 0.25rem;
+}
+
+/* Body */
+.banner {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.banner img, .project-list img {
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-list img.feature {
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.banner .subtitle {
+    position: absolute;
+    padding: 1%;
+    right: 5%;
+    bottom: 4%;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 2% 0;
+}
+
+section.banner {
+    margin: 0;
+}
+
+.section-header {
+    width: 13%;
+    margin-right: 2%;
+    text-align: right;
+}
+
+.section-body {
+    width: 62%;
+    padding-left: 3%;
+    border-left: var(--csecondary) solid 2px;
+}
+
+.portrait {
+    border: var(--cprimary) 4px solid;
+    margin: 0 2% 2% 3%;
+    width: 250px;
+    float: right;
+}
+
+.project-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.project {
+    display: inline-block;
+    position: relative;
+    width: 48%;
+    min-width: 260px;
+    margin: 1%
+}
+
+.project.feature {
+    width: 100%;
+    min-height:  400px;
+}
+
+.project .project-details {
+    position: absolute;
+    bottom: 6%;
+}
+
+.horizontal.list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+}
+
+/* Footer */
+
+footer {
+    position: static;
+    bottom: 0;
+    margin-top: 1px;
+}
+
+/*** Media Queries ***/
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .project {
+        width: 98%
+    }
+
+    .project.feature {
+        width: 98%;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .nav.list a {
+        border-bottom: none;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-right: 1%;
+    }
+
+    section {
+        flex-flow: column wrap;
+        margin: 0;
+    }
+
+    .section-header {
+        width: auto;
+        margin: 2% 0;
+        text-align: center;
+    }
+
+    .section-body {
+        width: auto;
+        margin: 2%;
+        padding: 2% 0 0 0;
+        border-top: var(--csecondary) solid 2px;
+        border-left: none;
+    }
+
+    .portrait {
+        margin-top: 1%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .list a {
+        padding: 3px 0;
+        font-size: 12px;
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    .nav.list {
+        justify-content: space-evenly;
+    }
+
+    .nav.list li {
+        padding: 0;
+    }
+
+    .section-body {
+        margin: 0;
+    }
+
+    .horizontal.list {
+        flex-flow: column wrap;
+    }
+}
